@@ -11,7 +11,7 @@ import java.util.List;
 @Component
 public class SistemaMensagem implements CommandLineRunner {
 
-    @Value("${nome}")
+    @Value("${name:NoReply}")
     private String nome;
     @Value("${email}")
     private String email;
