@@ -1,5 +1,6 @@
 package com.github.youssfbr.spring.app;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -10,9 +11,12 @@ import java.util.List;
 @Component
 public class SistemaMensagem implements CommandLineRunner {
 
-    private String nome = "Alisson Youssf";
-    private String email = "youssf@gmail.com";
-    private List<Long> telefones = new ArrayList<>(Arrays.asList(8511998877L, 85554466552L));
+    @Value("${nome}")
+    private String nome;
+    @Value("${email}")
+    private String email;
+    @Value("${telefones}")
+    private List<String> telefones = new ArrayList<>();
 
     @Override
     public void run(String... args) throws Exception {
